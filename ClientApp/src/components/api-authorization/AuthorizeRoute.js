@@ -1,9 +1,10 @@
-import React from 'react'
-import { Component } from 'react'
-import { Route, Navigate } from 'react-router-dom'
-import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants'
-import authService from './AuthorizeService'
-import Login from './Login'
+import React from 'react';
+import { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants';
+import authService from './AuthorizeService';
+import {Login} from './Login';
+import {Home} from '../Home';
 
 export default class AuthorizeRoute extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ export default class AuthorizeRoute extends Component {
                     if (authenticated) {
                         return <Route to='/Login' element={<Login/>} />
                     } else {
-                        return <Route element={<Navigate to={redirectUrl} />} />
+                        return <Route path={redirectUrl} element={<Home/>} />
                     }
                 }} />
         }
