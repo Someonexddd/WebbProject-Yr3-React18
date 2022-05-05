@@ -89,7 +89,10 @@ namespace WebbProjekt_yr3
                                                        "https://localhost:5000",
                                                        "null",
                                                        "127.0.0.1:5000",
-                                                       "127.0.0.1:5001")
+                                                       "127.0.0.1:5001",
+                                                       "127.0.0.1:3000",
+                                                       "localhost:3000",
+                                                       "https://localhost:3000")
             .AllowAnyMethod()
             .AllowAnyHeader());
 

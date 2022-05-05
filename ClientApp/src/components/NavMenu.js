@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import { Form, FormControl, NavDropdown, Nav, Container, Navbar, Button, Offcanvas } from 'react-bootstrap';
+import {LoginMenu} from './api-authorization/LoginMenu'
 
 
 
@@ -46,6 +46,8 @@ export class NavMenu extends Component {
                         <NavDropdown.Item href="#action5">
                           Something else here
                         </NavDropdown.Item>
+                        <LoginMenu>
+                </LoginMenu>
                       </NavDropdown>
                     </Nav>
                     <Form className="d-flex">
