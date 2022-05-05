@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants';
 import authService from './AuthorizeService';
 import {Login} from './Login';
-import {Home} from '../Home';
+import { FetchData } from '../FetchData';
 
 export default class AuthorizeRoute extends Component {
     constructor(props) {
@@ -38,9 +38,9 @@ export default class AuthorizeRoute extends Component {
             return <Route {...rest}
                 render={(props) => {
                     if (authenticated) {
-                        return <Route to='/Login' element={<Login/>} />
+                        return <Route to='/fetch-data' element={<FetchData/>} />
                     } else {
-                        return <Route path={redirectUrl} element={<Home/>} />
+                        return <Route path={redirectUrl} element={<Login/>} />
                     }
                 }} />
         }

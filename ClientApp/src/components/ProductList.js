@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from './ProductForm';
-import { Link } from 'react-router-dom';
+
 import axios from "axios";
 import '../App.css';
-import Button from 'react-bootstrap/Button';
+import ProductCard from './ProductCard';
+
 
 
 
@@ -18,10 +19,9 @@ export default function ProductList() {
         refreshProductList();
     }, [])
 
-    const addOrEdit = (formData, onSucess) => {
+    const addOrEdit = (formData) => {
         productAPI().create(formData)
             .then(res => {
-                onSucess();
                 refreshProductList();
             })
             .catch(err => console.log(err))
@@ -64,25 +64,7 @@ export default function ProductList() {
 
 
 
-    const displayItems = ProductListConst.map((product) =>
-        <div className='col-4' key={product.productId}>
 
-            <div className="card">
-                <img className="card-img-top img-thumbnail imageSize " src={product.imageSrc} alt={product.imageAlt} />
-                <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">{product.artist}</p>
-                    <Button variant="primary" as={Link} to={
-                        {
-                            pathname: '/Details',
-                            state:product.productId
-                        }
-                    }>Details</Button>
-                </div>
-            </div>
-
-        </div>
-    );
 
     return (
         <>
@@ -96,7 +78,7 @@ export default function ProductList() {
             </div>
             <div className='productListContainer mx-auto'>
                 <div className='row'>
-                    {displayItems}
+                    <ProductCard key={ProductListConst} value={ProductListConst}/>
                 </div>
             </div>
             <div className='row'>

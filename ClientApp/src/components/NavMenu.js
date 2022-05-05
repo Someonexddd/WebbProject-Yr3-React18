@@ -1,71 +1,58 @@
 import React, { Component } from 'react';
+import { Collapse, Container, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { LoginMenu } from './api-authorization/LoginMenu';
 import './NavMenu.css';
-import { Form, FormControl, NavDropdown, Nav, Container, Navbar, Button, Offcanvas } from 'react-bootstrap';
-import {LoginMenu} from './api-authorization/LoginMenu'
-
 
 
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
+  constructor(props) {
+    super(props);
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true
+    };
+  }
+
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
 
   render() {
     return (
       <header>
-        <>
-
-          {['lg'].map((expand) => (
-            <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-              <Container fluid>
-                <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-                <Navbar.Offcanvas
-                  id={`offcanvasNavbar-expand-${expand}`}
-                  aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                  placement="end"
-                >
-                  <Offcanvas.Header closeButton>
-                    <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                      Offcanvas
-                    </Offcanvas.Title>
-                  </Offcanvas.Header>
-                  <Offcanvas.Body>
-                    <Nav className="justify-content-end flex-grow-1 pe-3">
-                      <Nav.Link href="#action1">Home</Nav.Link>
-                      <Nav.Link href="#action2">Link</Nav.Link>
-                      <NavDropdown
-                        title="Dropdown"
-                        id={`offcanvasNavbarDropdown-expand-${expand}`}
-                      >
-                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">
-                          Another action
-                        </NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action5">
-                          Something else here
-                        </NavDropdown.Item>
-                        <LoginMenu>
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+          <Container fluid>
+            <NavbarBrand tag={Link} to="/">WebbProjekt_yr3</NavbarBrand>
+            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+              <ul className="navbar-nav flex-grow">
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch Weather data</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/ProductList">ProductList</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/Details">Details</NavLink>
+                </NavItem>
+                <LoginMenu>
                 </LoginMenu>
-                      </NavDropdown>
-                    </Nav>
-                    <Form className="d-flex">
-                      <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
-                      />
-                      <Button variant="outline-success">Search</Button>
-                    </Form>
-                  </Offcanvas.Body>
-                </Navbar.Offcanvas>
-              </Container>
-            </Navbar>
-          ))}
-
-        </>
+              </ul>
+            </Collapse>
+          </Container>
+        </Navbar>
       </header>
 
     );
