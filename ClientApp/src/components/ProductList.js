@@ -17,6 +17,7 @@ export default function ProductList() {
 
     useEffect(() => {
         refreshProductList();
+        // eslint-disable-next-line
     }, [])
 
     const addOrEdit = (formData) => {

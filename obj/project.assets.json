@@ -10147,19 +10147,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\0309joth\\.nuget\\packages\\": {}
+    "C:\\Users\\theoj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\0309joth\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
+      "projectUniqueName": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
       "projectName": "WebbProjekt-yr3",
-      "projectPath": "C:\\Users\\0309joth\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
-      "packagesPath": "C:\\Users\\0309joth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\0309joth\\Desktop\\WebbProject-Yr3-React18\\obj\\",
+      "projectPath": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
+      "packagesPath": "C:\\Users\\theoj\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\0309joth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\theoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10264,7 +10264,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

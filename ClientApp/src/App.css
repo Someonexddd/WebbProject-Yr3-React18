@@ -26,6 +26,9 @@ h1 {
 p {
   font-family: 'Roboto-Regular', sans-serif;
 }
+img {
+  width: 120px;
+}
 
 @media (min-width: 992px) {
 
