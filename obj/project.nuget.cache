@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Psi4I6ZRLyA99Vx9G0MuypXBh71hWuFMG3X1Lnn0lQTk3wLUJcKutA2wWMZ/CuTI9UJWzpaJK5+f1QxfVQuoyw==",
+  "dgSpecHash": "3ZwltT1nHKuhKe2GEwuCUKOeT/Eps85im7CM6hOmLZCdYBoAsd8+2CGVKqMLjjp5tTGdSPTAkitIFh02TNNltQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
+  "projectFilePath": "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\theoj\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\theoj\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj": {}
+    "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj": {
+    "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
+        "projectUniqueName": "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
         "projectName": "WebbProjekt-yr3",
-        "projectPath": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
+        "projectPath": "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\WebbProjekt-yr3.csproj",
         "packagesPath": "C:\\Users\\theoj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theoj\\Desktop\\WebbProject-Yr3-React18\\obj\\",
+        "outputPath": "C:\\Users\\theoj\\Desktop\\backupå\\WebbProject-Yr3-React18\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
