@@ -7,7 +7,7 @@ Step 1.
 
 Open the commandline or powershell and type:
 ```
-git clone https://github.com/Someonexddd/WebbProject-yr3.git
+git clone https://github.com/Someonexddd/WebbProject-Yr3-React18.git
 ```
 
 Step 2.
