@@ -1,0 +1,6 @@
+/ClientApp/node_modules
+/.pnp
+.pnp.js
+
+!/ClientApp/node_modules/react-scripts/config/webpackDevServer.config.js
+!/ClientApp/node_modules/bootstrap/dist/css/bootstrap.css
