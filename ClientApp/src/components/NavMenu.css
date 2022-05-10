@@ -4,8 +4,20 @@
   word-break: break-all;
 }
 
+
+.nopadding {
+  padding: 0px !important;
+}
+
+.navbarsize {
+  height: 150px;
+}
+
 html {
   font-size: 14px;
+}
+header {
+  height: 150px;
 }
 @media (min-width: 768px) {
   html {
