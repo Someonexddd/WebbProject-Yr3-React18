@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Row, Col, Button, Offcanvas, Form, NavDropdown, Container, Nav, Navbar } from 'react-bootstrap';
+import { Col, Row, Button, Offcanvas, Form, NavDropdown, Nav, Navbar, Stack, Image, Container } from 'react-bootstrap';
 
 const NavMenuNew = () => {
     const { loginWithRedirect, logout } = useAuth0();
@@ -12,7 +12,7 @@ const NavMenuNew = () => {
     const loginButton = () => {
         if (Loading === true && Authenticated === false) {
             return (
-                <Nav.Link className="text-dark" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Login</Nav.Link>
             )
         }
         if (Authenticated === true && Loading === false) {
@@ -22,7 +22,7 @@ const NavMenuNew = () => {
         }
         if (Authenticated === false && Loading === false) {
             return (
-                <Nav.Link className="text-dark" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Login</Nav.Link>
             )
         }
     }
@@ -34,7 +34,7 @@ const NavMenuNew = () => {
         }
         if (Authenticated === true && Loading === false) {
             return (
-                <Nav.Link className="text-dark" onClick={() => logout()}>Logout</Nav.Link>
+                <Nav.Link className="white-text" onClick={() => logout()}>Logout</Nav.Link>
             )
         }
         if (Authenticated === false && Loading === false) {
@@ -51,7 +51,7 @@ const NavMenuNew = () => {
         }
         if (Authenticated === true && Loading === false) {
             return (
-                <Nav.Link as={Link} className="text-dark" to="/Profile">Profile</Nav.Link>
+                <Nav.Link as={Link} className="white-text" to="/Profile">Profile</Nav.Link>
             )
         }
         if (Authenticated === false && Loading === false) {
@@ -65,80 +65,74 @@ const NavMenuNew = () => {
     return (
         <header>
 
-            {['lg'].map((expand) => (
-                <Navbar key={expand} bg="light" expand={expand} className="mb-3 navbarsize">
+            {['md'].map((expand) => (
+                <Navbar key={expand} expand={expand} className="mb-3 navbar-size ">
+                    <Navbar.Toggle className='ms-auto ' aria-controls={`offcanvasNavbar-expand-${expand}`} />
+                    <Navbar.Offcanvas
+                        id={`offcanvasNavbar-expand-${expand}`}
+                        aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                        placement="end">
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+
+                                North End Records
 
 
-                    <Container fluid className='nopadding navbarsize'>
-
-                        <Row style={{ width: "100vw" }}>
-                            <Col>
-                            <Nav className="justify-content-center flex-grow-1 pe-3">
-                                <Form>
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
-                                    <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button>
-                                </Form>
-                            </Nav>
-                            </Col>
-                        </Row>
-
-                        <Row style={{ width: "100vw" }}>
-                        <Col>
-                            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-                            <Navbar.Offcanvas
-                                id={`offcanvasNavbar-expand-${expand}`}
-                                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                                placement="end"
-                            >
-                                <Offcanvas.Header closeButton>
-                                    <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                                        North End Records
-                                    </Offcanvas.Title>
-                                </Offcanvas.Header>
-                                <Offcanvas.Body>
-                                    <Nav className="justify-content-center flex-grow-1 pe-3">
-                                        <Nav.Item>
-                                            <Nav.Link as={Link} className="text-dark" to="/" >Home</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link as={Link} className="text-dark" to="/ProductList">ProductList</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link as={Link} className="text-dark" to="/Details">Details</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
+                            </Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
+                            <Stack gap={12} className='col-md-5 mx-auto hidden'>
+                                <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-4 ">
+                                    <Nav.Item className='me-auto'>
+                                        <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", 'margin-top': "30px" }} />
+                                    </Nav.Item>
+                                    <Nav.Item className='me-auto'>
+                                        <Stack direction='horizontal' gap={3} style={{ width: "300px", 'margin-top': "30px" }}>
+                                            <Form.Control type="input" placeholder="Search" />
+                                            <Button variant="search" type="submit">
+                                                Search
+                                            </Button>
+                                        </Stack>
+                                    </Nav.Item>
+                                    <Nav.Item className='me-auto' gap={2}>
+                                        <Stack direction='horizontal'>
                                             {profileButton()}
-                                        </Nav.Item>
-                                        <Nav.Item>
                                             {loginButton()}
-                                        </Nav.Item>
-                                        <Nav.Item>
                                             {logoutButton()}
-                                        </Nav.Item>
-                                        <NavDropdown
-                                            title="Dropdown"
-                                            id={`offcanvasNavbarDropdown-expand-${expand}`}
-                                        >
-                                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                            <NavDropdown.Item href="#action4">
-                                                Another action
-                                            </NavDropdown.Item>
-                                            <NavDropdown.Divider />
-                                            <NavDropdown.Item href="#action5">
-                                                Something else here
-                                            </NavDropdown.Item>
-                                        </NavDropdown>
-                                    </Nav>
-                                </Offcanvas.Body>
-                            </Navbar.Offcanvas>
-                            </Col>
-                        </Row>
-                    </Container>
+                                        </Stack>
+                                    </Nav.Item>
+                                </Nav>
+                                <Nav className="justify-content-center flex-grow-1 pe-3 nav2">
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark" to="/" >Home</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark" to="/ProductList">ProductList</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark" to="/Details">Details</Nav.Link>
+                                    </Nav.Item>
+                                    <NavDropdown
+                                        title="Dropdown"
+                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
+                                    >
+                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                                        <NavDropdown.Item href="#action4">
+                                            Another action
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item href="#action5">
+                                            Something else here
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </Nav>
+                            </Stack>
+                            <Stack gap={12} className='col-md-5 mx-auto nav3'>
+                                test
+                            </Stack>
+                        </Offcanvas.Body>
+                    </Navbar.Offcanvas>
+
                 </Navbar>
             ))}
         </header>

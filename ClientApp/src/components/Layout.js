@@ -8,9 +8,9 @@ export class Layout extends Component {
 
   render () {
     return (
-      <div>
+      <div className=''>
         <NavMenuNew />
-        <Container fluid>
+        <Container fluid className='color-padding'>
           {this.props.children}
         </Container>
       </div>

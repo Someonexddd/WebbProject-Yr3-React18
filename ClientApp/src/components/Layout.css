@@ -1,0 +1,6 @@
+@import url("../variables.css");
+
+.color-padding {
+    background-color: var(--main-background);
+    padding: 5px;
+}

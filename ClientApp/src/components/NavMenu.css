@@ -1,17 +1,46 @@
-﻿a.navbar-brand {
+﻿@import url("../variables.css");
+
+a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
 
 
-.nopadding {
+.no-padding {
   padding: 0px !important;
 }
 
-.navbarsize {
-  height: 150px;
+.white-text {
+  color: white !important;
+  margin-top: 30px;
 }
+
+.navbar-size {
+  height: 150px;
+  background-color: var(--header-top);
+}
+.offcanvas-top {
+  background-color: var(--header-top);
+}
+.nav1 {
+  width: 100vw;
+  height: 100px;
+  background-color: var(--header-top);
+  flex-flow: column;
+}
+.nav2 {
+  width: 100vw;
+  height: 50px;
+  background-color: var(--lower-nav);
+}
+.btn-search {
+  background-color: var(--header-top);
+  color: white !important;
+  border: 1px solid white !important;
+  flex-flow: column;
+}
+
 
 html {
   font-size: 14px;
@@ -22,6 +51,31 @@ header {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+  }
+}
+.NonOffCanvas {
+  display: block;
+}
+
+@media screen and (max-width: 576px) {
+  .NonOffCanvas {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav3 {
+    display: hidden;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hidden {
+    display: none !important;
+  }
+  header {
+    height: 50px;
+  }
+  .navbar-size {
+    height: 50px;
   }
 }
 
