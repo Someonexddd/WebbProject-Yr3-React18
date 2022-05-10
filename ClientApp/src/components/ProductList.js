@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import ProductForm from './ProductForm';
+
 
 import axios from "axios";
 import '../App.css';
 import ProductCard from './ProductCard';
+import AdminAddProducts from './AdminAddProducts';
+
 
 
 
@@ -20,13 +22,7 @@ export default function ProductList() {
         // eslint-disable-next-line
     }, [])
 
-    const addOrEdit = (formData) => {
-        productAPI().create(formData)
-            .then(res => {
-                refreshProductList();
-            })
-            .catch(err => console.log(err))
-    }
+
 
     const productAPI = (url = 'http://localhost:5000/api/ProductModels') => {
         return {
@@ -49,24 +45,6 @@ export default function ProductList() {
     }
 
 
-
-
-    /* const imageCard = data => (
- 
-         <div class="card" style="width: 18rem;">
-             <img class="card-img-top" src={data.ImageSrc} alt={data.ImageAlt} />
-             <div class="card-body">
-                 <h5 class="card-title">{data.Name}</h5>
-                 <p class="card-text">{data.Artist}</p>
-                 <a href="#" class="btn btn-primary">Details</a>
-             </div>
-         </div>
-     ) */
-
-
-
-
-
     return (
         <>
 
@@ -79,15 +57,11 @@ export default function ProductList() {
             </div>
             <div className='productListContainer mx-auto'>
                 <div className='row'>
-                    <ProductCard key={ProductListConst} value={ProductListConst}/>
+                    <ProductCard key={ProductListConst} value={ProductListConst} />
                 </div>
             </div>
             <div className='row'>
-            <div className='col-sm-6'>
-                    <ProductForm
-                        addOrEdit={addOrEdit}/>
-                        
-                </div>
+                <AdminAddProducts/>
             </div>
         </>
     );

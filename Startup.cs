@@ -52,6 +52,7 @@ namespace WebbProjekt_yr3
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
+            
 
             services.AddControllersWithViews();
             services.AddRazorPages();

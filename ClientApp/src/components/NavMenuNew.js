@@ -14,6 +14,60 @@ import Button from 'react-bootstrap/Button'
 
 const NavMenuNew = () => {
     const { loginWithRedirect, logout } = useAuth0();
+    const Authenticated = useAuth0().isAuthenticated;
+    const Loading = useAuth0().isLoading;
+
+    const loginButton = () => {
+        if (Loading === true && Authenticated === false) {
+            return (
+                <Nav.Link tag={Link} className="text-dark" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+            )
+        }
+        if (Authenticated === true && Loading === false) {
+            return (
+                null
+            )
+        }
+        if (Authenticated === false && Loading === false) {
+            return (
+                <Nav.Link tag={Link} className="text-dark" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+            )
+        }
+    }
+    const logoutButton = () => {
+        if (Loading === true && Authenticated === false) {
+            return (
+                null
+            )
+        }
+        if (Authenticated === true && Loading === false) {
+            return (
+                <Nav.Link tag={Link} className="text-dark" onClick={() => logout()}>Logout</Nav.Link>
+            )
+        }
+        if (Authenticated === false && Loading === false) {
+            return (
+                null
+            )
+        }
+    }
+    const profileButton = () => {
+        if (Loading === true && Authenticated === false) {
+            return (
+                null
+            )
+        }
+        if (Authenticated === true && Loading === false) {
+            return (
+                <Nav.Link tag={Link} className="text-dark" href="/Profile">Profile</Nav.Link>
+            )
+        }
+        if (Authenticated === false && Loading === false) {
+            return (
+                null
+            )
+        }
+    }
 
 
     return (
@@ -40,23 +94,19 @@ const NavMenuNew = () => {
                                         <Nav.Link tag={Link} className="text-dark" href="/">Home</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link tag={Link} className="text-dark" href="/counter">Counter</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link tag={Link} className="text-dark" href="/fetch-data">Fetch Weather data</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
                                         <Nav.Link tag={Link} className="text-dark" href="/ProductList">ProductList</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link tag={Link} className="text-dark" href="/Details">Details</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link tag={Link} className="text-dark" href="/Profile">Profile</Nav.Link>
+                                        {profileButton()}
                                     </Nav.Item>
-                                    <Nav.Link tag={Link} className="text-dark" onClick={() => loginWithRedirect()}>Login</Nav.Link>
                                     <Nav.Item>
-                                        <Nav.Link tag={Link} className="text-dark" onClick={() => logout()}>Logout</Nav.Link>
+                                        {loginButton()}
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                         {logoutButton()}
                                     </Nav.Item>
                                     <NavDropdown
                                         title="Dropdown"

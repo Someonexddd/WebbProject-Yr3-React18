@@ -15,6 +15,8 @@ root.render(
     <Auth0Provider
     domain={domain}
     clientId={clientId}
+    audience="https://northendrecords.eu.auth0.com/api/v2/"
+    scope="read:current_user update:current_user_metadata read:users read:roles read:role_members"
     redirectUri={window.location.origin}>
         <App tab="home" />
     </Auth0Provider>
