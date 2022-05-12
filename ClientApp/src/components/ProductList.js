@@ -60,7 +60,7 @@ export default function ProductList() {
                     <ProductCard key={ProductListConst} value={ProductListConst} />
                 </div>
             </div>
-            <div className='row'>
+            <div className='row justify-content-center flex' style={{marginTop: "20px"}}>
                 <AdminAddProducts productAPI={productAPI}/>
             </div>
         </>

@@ -142,30 +142,30 @@ export default function ProductForm(props) {
                                 onChange={showPreview} id="image-uploader" />
                         </div>
                         <div className='form-group'>
-                            <input className={'form-control' + applyErrorClass('imageAlt')} placeholder='imageAlt' name="imageAlt" values={values.imageAlt} onChange={handleInputChange} id="imageAlt"></input>
+                            <input className={'form-control margintop10px' + applyErrorClass('imageAlt')} placeholder='imageAlt' name="imageAlt" values={values.imageAlt} onChange={handleInputChange} id="imageAlt"></input>
                         </div>
                         <div className='form-group'>
-                            <input className={'form-control' + applyErrorClass('Name')} placeholder='Name' name="Name" values={values.Name} onChange={handleInputChange} id="Name"></input>
+                            <input className={'form-control margintop10px' + applyErrorClass('Name')} placeholder='Name' name="Name" values={values.Name} onChange={handleInputChange} id="Name"></input>
                         </div>
                         <div className='form-group'>
-                            <input className={'form-control' + applyErrorClass('Artist')} placeholder='Artist' name="Artist" values={values.Artist} onChange={handleInputChange} id="Artist"></input>
+                            <input className={'form-control margintop10px' + applyErrorClass('Artist')} placeholder='Artist' name="Artist" values={values.Artist} onChange={handleInputChange} id="Artist"></input>
                         </div>
                         <div className='form-group'>
-                            <input className={"form-control" + applyErrorClass('ReleaseYear')} placeholder='YYYY-MM-DD' name="ReleaseYear" values={values.ReleaseYear} onChange={handleInputChange} id="ReleaseYear"></input>
+                            <input className={"form-control margintop10px" + applyErrorClass('ReleaseYear')} placeholder='YYYY-MM-DD' name="ReleaseYear" values={values.ReleaseYear} onChange={handleInputChange} id="ReleaseYear"></input>
                         </div>
                         <div className='form-group'>
-                            <input className="form-control" placeholder='Country' name="Country" values={values.Country} onChange={handleInputChange} id="Country"></input>
+                            <input className="form-control margintop10px" placeholder='Country' name="Country" values={values.Country} onChange={handleInputChange} id="Country"></input>
                         </div>
                         <div className='form-group'>
-                            <input className="form-control" placeholder='Format' name="Format" values={values.Format} onChange={handleInputChange} id="Format"></input>
+                            <input className="form-control margintop10px" placeholder='Format' name="Format" values={values.Format} onChange={handleInputChange} id="Format"></input>
                         </div>
                         <div className='form-group'>
-                            <input className="form-control" placeholder='Genre' name="Genre" values={values.Genre} onChange={handleInputChange} id="Genre"></input>
+                            <input className="form-control margintop10px" placeholder='Genre' name="Genre" values={values.Genre} onChange={handleInputChange} id="Genre"></input>
                         </div>
                         <div className='form-group'>
-                            <input className={"form-control" + applyErrorClass('UnitsInStock')} placeholder='UnitsInStock' name="UnitsInStock" values={values.UnitsInStock} onChange={handleInputChange} id="UnitsInStock"></input>
+                            <input className={"form-control margintop10px" + applyErrorClass('UnitsInStock')} placeholder='UnitsInStock' name="UnitsInStock" values={values.UnitsInStock} onChange={handleInputChange} id="UnitsInStock"></input>
                         </div>
-                        <div className='form-group text-center'>
+                        <div className='form-group text-center margintop10px'>
                             <button type='submit' className='btn btn-primary'>Submit</button>
                         </div>
                     </div>

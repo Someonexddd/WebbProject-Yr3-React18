@@ -22,12 +22,22 @@ code {
 h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+.btn-colors {
+  background-color: var(--btn-colors) !important;
+  border-color: var(--btn-colors ) !important;
+  border: 1px solid var(--btn-colors) !important;
+}
 p {
   font-family: 'Roboto-Regular', sans-serif;
 }
 img {
   width: 120px;
+}
+.margintop10px {
+  margin-top: 10px;
+}
+.flex {
+  display: flex !important;
 }
 
 @media (min-width: 992px) {
@@ -35,8 +45,13 @@ img {
   .productListContainer {
     width: 970px;
   }
+  .cardcontainer {
+    width: 302px !important;
+    height: 300px !important;
+  }
   .imageSize {
-    width: 186px;
-    height: 186px;
+    width: fit-content !important;
+    max-width: 100% !important;
+    height: 100% !important;
   }
 }

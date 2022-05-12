@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function Details() {
     const location = useLocation();
+    console.log(location);
     
 
 
@@ -18,8 +19,8 @@ export default function Details() {
             <Container fluid className='container ms-auto me-auto'>
                 <Row>
                     <Col md={6} className=' justify-content-center flex'>
-                        <Image src={location.state.product.imageSrc}></Image>
-                        1 of 2
+                        <Image fluid src={location.state.imageSrc}></Image>
+                        
 
                     </Col>
                     <Col md={6} className=' justify-content-center flex'>2 of 2</Col>

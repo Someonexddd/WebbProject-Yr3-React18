@@ -1,6 +1,11 @@
 .container {
-    width: 600px ;
+    width: 600px !important;
+    height: 600px !important;
 }
 .flex {
     display: flex;
+}
+.image {
+    width: 100%;
+    height: 100%;
 }
