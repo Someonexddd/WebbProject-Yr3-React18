@@ -16,7 +16,7 @@ function ProductCard(props) {
                     <Button variant="primary" as={Link} to={
                         {
                             pathname: '/Details',
-                            state:product.productId
+                            state: {product: product}
                         }
                     }>Details</Button>
                 </div>

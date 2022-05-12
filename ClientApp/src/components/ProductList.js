@@ -61,7 +61,7 @@ export default function ProductList() {
                 </div>
             </div>
             <div className='row'>
-                <AdminAddProducts/>
+                <AdminAddProducts productAPI={productAPI}/>
             </div>
         </>
     );

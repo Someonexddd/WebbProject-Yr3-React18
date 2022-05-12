@@ -82,19 +82,19 @@ const NavMenuNew = () => {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Stack gap={12} className='col-md-5 mx-auto hidden'>
-                                <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-4 ">
-                                    <Nav.Item className='me-auto'>
-                                        <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", 'margin-top': "30px" }} />
+                                <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-2">
+                                    <Nav.Item className='md-4 col'>
+                                        <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", marginTop: "30px"}} />
                                     </Nav.Item>
-                                    <Nav.Item className='me-auto'>
-                                        <Stack direction='horizontal' gap={3} style={{ width: "300px", 'margin-top': "30px" }}>
+                                    <Nav.Item className='md-4 col justify-content-center' style={{display: "flex"}}>
+                                        <Stack direction='horizontal' gap={3} style={{ width: "300px" }}>
                                             <Form.Control type="input" placeholder="Search" />
                                             <Button variant="search" type="submit">
                                                 Search
                                             </Button>
                                         </Stack>
                                     </Nav.Item>
-                                    <Nav.Item className='me-auto' gap={2}>
+                                    <Nav.Item className='md-4 col justify-content-end' style={{display: "flex", marginBottom: "30px"}} gap={2}>
                                         <Stack direction='horizontal'>
                                             {profileButton()}
                                             {loginButton()}
