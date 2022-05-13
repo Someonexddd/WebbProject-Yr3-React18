@@ -12,7 +12,7 @@ const NavMenuNew = () => {
     const loginButton = () => {
         if (Loading === true && Authenticated === false) {
             return (
-                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Admin Login</Nav.Link>
             )
         }
         if (Authenticated === true && Loading === false) {
@@ -22,7 +22,7 @@ const NavMenuNew = () => {
         }
         if (Authenticated === false && Loading === false) {
             return (
-                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Login</Nav.Link>
+                <Nav.Link className="white-text" onClick={() => loginWithRedirect()}>Admin Login</Nav.Link>
             )
         }
     }
@@ -84,9 +84,9 @@ const NavMenuNew = () => {
                             <Stack gap={12} className='col-md-5 mx-auto hidden'>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-2">
                                     <Nav.Item className='md-4 col'>
-                                        <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", marginTop: "30px"}} />
+                                        <Nav.Link as={Link} to="/"> <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", marginTop: "30px" }} /></Nav.Link>
                                     </Nav.Item>
-                                    <Nav.Item className='md-4 col justify-content-center' style={{display: "flex"}}>
+                                    <Nav.Item className='md-4 col justify-content-center' style={{ display: "flex" }}>
                                         <Stack direction='horizontal' gap={3} style={{ width: "300px" }}>
                                             <Form.Control type="input" placeholder="Search" />
                                             <Button variant="search" type="submit">
@@ -94,7 +94,7 @@ const NavMenuNew = () => {
                                             </Button>
                                         </Stack>
                                     </Nav.Item>
-                                    <Nav.Item className='md-4 col justify-content-end' style={{display: "flex", marginBottom: "30px"}} gap={2}>
+                                    <Nav.Item className='md-4 col justify-content-end' style={{ display: "flex", marginBottom: "30px" }} gap={2}>
                                         <Stack direction='horizontal'>
                                             {profileButton()}
                                             {loginButton()}
@@ -108,9 +108,6 @@ const NavMenuNew = () => {
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link as={Link} className="text-dark" to="/ProductList">ProductList</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link as={Link} className="text-dark" to="/Details">Details</Nav.Link>
                                     </Nav.Item>
                                     <NavDropdown
                                         title="Dropdown"
