@@ -74,6 +74,7 @@ namespace WebbProjekt_yr3.Controllers
                 return BadRequest();
             }
 
+
             if (productModel.ImageFile != null)
             {
                 DeleteImage(productModel.ImageName);
