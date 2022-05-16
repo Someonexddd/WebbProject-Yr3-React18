@@ -2,5 +2,6 @@
 
 .color-padding {
     background-color: var(--main-background);
-    padding: 5px;
+    padding: 0px !important;
+    margin: 0px !important;
 }

@@ -67,11 +67,17 @@ namespace WebbProjekt_yr3.Controllers
         // PUT: api/ProductModels/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProductModel(Guid id, ProductModel productModel)
+        public async Task<IActionResult> PutProductModel(Guid id, [FromForm]ProductModel productModel)
         {
             if (id != productModel.ProductId)
             {
                 return BadRequest();
+            }
+
+            if (productModel.ImageFile != null)
+            {
+                DeleteImage(productModel.ImageName);
+                productModel.ImageName = await SaveImage(productModel.ImageFile);
             }
 
             _context.Entry(productModel).State = EntityState.Modified;
@@ -142,6 +148,13 @@ namespace WebbProjekt_yr3.Controllers
                 await imageFile.CopyToAsync(fileStream);
             }
             return imageName;
+        }
+        [NonAction]
+        public void DeleteImage(string imageName)
+        {
+            var imagePath = Path.Combine(_hostEnviroment.ContentRootPath, "Images", imageName);
+            if (System.IO.File.Exists(imagePath))
+                System.IO.File.Delete(imagePath);
         }
     }
 }

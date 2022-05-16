@@ -1,27 +1,54 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
+import { Carousel, Image } from 'react-bootstrap';
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export class Home extends Component {
-  static displayName = Home.name;
+export default function Home() {
 
-  render () {
+  function ControlledCarousel() {
+    const [index, setIndex] = useState(0);
+  
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+    };
+  
     return (
-      <div>
-        <h1 className="titleFont">Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel.Item className='carousel-image-container'>
+          <Image
+            className="carousel-image-size"
+            src="https://wallpaperaccess.com/full/695805.jpg"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>Abbey Road</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item className='carousel-image-container'>
+          <Image
+            className="carousel-image-size"
+            src="https://i.pinimg.com/originals/c6/48/87/c6488775ca560ffeaa079f998360e3b7.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h3>The Resistance</h3>
+
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item className='carousel-image-container'>
+          <Image
+            className="carousel-image-size"
+            src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/466545-Pink_Floyd-album_covers.jpg"
+            alt="Third slide"
+          />
+  
+          <Carousel.Caption>
+            <h3>The Wall</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     );
   }
+  
+  return(<ControlledCarousel />);
 }

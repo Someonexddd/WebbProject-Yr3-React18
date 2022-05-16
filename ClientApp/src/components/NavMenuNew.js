@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Col, Row, Button, Offcanvas, Form, NavDropdown, Nav, Navbar, Stack, Image, Container } from 'react-bootstrap';
+import { Button, Offcanvas, Form, Nav, Navbar, Stack, Image } from 'react-bootstrap';
 
 const NavMenuNew = () => {
     const { loginWithRedirect, logout } = useAuth0();
@@ -80,7 +80,7 @@ const NavMenuNew = () => {
 
                             </Offcanvas.Title>
                         </Offcanvas.Header>
-                        <Offcanvas.Body>
+                        <Offcanvas.Body className='no-padding' style={{overflow: "hidden"}}>
                             <Stack gap={12} className='col-md-5 mx-auto hidden'>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-2">
                                     <Nav.Item className='md-4 col'>
@@ -104,28 +104,46 @@ const NavMenuNew = () => {
                                 </Nav>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav2">
                                     <Nav.Item>
-                                        <Nav.Link as={Link} className="text-dark" to="/" >Home</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/" >Home</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link as={Link} className="text-dark" to="/ProductList">ProductList</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/NewInStock" state={{type: "New In Stock"}}>New In Stock</Nav.Link>
                                     </Nav.Item>
-                                    <NavDropdown
-                                        title="Dropdown"
-                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
-                                    >
-                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action4">
-                                            Another action
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item href="#action5">
-                                            Something else here
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/Topsellers" state={{type: "Topsellers"}}>Topsellers</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/Vinyl" state={{type: "LP"}}>Vinyl</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/CD" state={{type: "CD"}}>CDs</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link as={Link} className="text-dark nav-text" to="/Cassette" state={{type: "Cassette"}}>Cassette</Nav.Link>
+                                    </Nav.Item>
                                 </Nav>
                             </Stack>
                             <Stack gap={12} className='col-md-5 mx-auto nav3'>
-                                test
+                            <Nav className="justify-content-center flex-grow-1 pe-3 nav2" style={{height: "100vh"}}>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/" >Home</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/NewInStock" state={{type: "New In Stock"}}>New In Stock</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/Topsellers" state={{type: "Topsellers"}}>Topsellers</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/Vinyl" state={{type: "LP"}}>Vinyl</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/CD" state={{type: "CD"}}>CDs</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item className='justify-content-center flex'>
+                                        <Nav.Link as={Link} className="text-dark" to="/Cassette" state={{type: "Cassette"}}>Cassette</Nav.Link>
+                                    </Nav.Item>
+                                </Nav>
                             </Stack>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

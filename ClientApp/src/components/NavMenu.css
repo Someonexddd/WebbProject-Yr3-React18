@@ -40,6 +40,10 @@ a.navbar-brand {
   border: 1px solid white !important;
   flex-flow: column;
 }
+.nav-text {
+  font-family: 'Roboto-Regular', sans-serif !important;
+  font-weight: 400 !important;
+}
 
 
 html {
@@ -48,15 +52,8 @@ html {
 header {
   height: 150px;
 }
-.NonOffCanvas {
-  display: block;
-}
 
-@media screen and (max-width: 576px) {
-  .NonOffCanvas {
-    display: none;
-  }
-}
+
 @media screen and (min-width: 768px) {
   .nav3 {
     display: none !important;

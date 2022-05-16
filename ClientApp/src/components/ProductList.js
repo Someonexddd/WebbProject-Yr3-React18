@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
+import { useLocation } from 'react-router';
 import axios from "axios";
 import '../App.css';
 import ProductCard from './ProductCard';
@@ -13,7 +13,7 @@ import AdminAddProducts from './AdminAddProducts';
 export default function ProductList() {
 
     const [ProductListConst, setProductListConst] = useState([])
-
+    const location = useLocation();
 
 
 
@@ -43,7 +43,20 @@ export default function ProductList() {
             })
             .catch(err => console.log(err))
     }
+    const CheckForNull = () => {
+        if (ProductListConst === null) {
+            return (
+                <p>There was no Records matching your choice</p>
+            );
+        }
+        else {
+            return (
+                <ProductCard key={ProductListConst} value={ProductListConst} type={location.state.type} />
+            ); 
+        }
+    }
 
+    if (ProductListConst)
 
     return (
         <>
@@ -51,13 +64,13 @@ export default function ProductList() {
             <div className='row'>
                 <div className='col'>
                     <div className="p-5 mb-4 bg-light rounded-3">
-                        <h1 className="display-5 fw-bold text-center">Product register</h1>
+                        <h1 className="display-5 fw-bold text-center">{location.state.type}</h1>
                     </div>
                 </div>
             </div>
-            <div className='productListContainer mx-auto'>
+            <div className='product-list-container mx-auto'>
                 <div className='row'>
-                    <ProductCard key={ProductListConst} value={ProductListConst} />
+                    {CheckForNull()}
                 </div>
             </div>
             <div className='row justify-content-center flex' style={{marginTop: "20px"}}>

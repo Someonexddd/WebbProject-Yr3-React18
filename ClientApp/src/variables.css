@@ -1,6 +1,10 @@
+
+
 :root {
+    --heading-text: 'Arial, Helvetica', sans-serif;
+    --bread-text: 'Roboto', sans-serif;;
     --header-top: #333333;
     --lower-nav: #D4D4D4;
-    --main-background: #E0E0E0;
+    --main-background: #C4C4C4 ;
     --btn-colors: #14637D;
 }
