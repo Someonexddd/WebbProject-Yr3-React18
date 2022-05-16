@@ -14,37 +14,26 @@ export default function Home() {
   
     return (
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item className='carousel-image-container'>
+        <Carousel.Item className='container-body'>
           <Image
             className="carousel-image-size"
             src="https://wallpaperaccess.com/full/695805.jpg"
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>Abbey Road</h3>
-          </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item className='carousel-image-container'>
+        <Carousel.Item className='container-body'>
           <Image
             className="carousel-image-size"
             src="https://i.pinimg.com/originals/c6/48/87/c6488775ca560ffeaa079f998360e3b7.jpg"
             alt="Second slide"
           />
-          <Carousel.Caption>
-            <h3>The Resistance</h3>
-
-          </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item className='carousel-image-container'>
+        <Carousel.Item className='container-body'>
           <Image
             className="carousel-image-size"
             src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/466545-Pink_Floyd-album_covers.jpg"
             alt="Third slide"
           />
-  
-          <Carousel.Caption>
-            <h3>The Wall</h3>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     );

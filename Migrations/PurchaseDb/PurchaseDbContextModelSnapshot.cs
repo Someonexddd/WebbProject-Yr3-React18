@@ -30,13 +30,14 @@ namespace WebbProjekt_yr3.Migrations.PurchaseDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CardCCV")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CardName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CardName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CardNum")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
@@ -46,7 +47,6 @@ namespace WebbProjekt_yr3.Migrations.PurchaseDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostNum")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PurchaseDate")

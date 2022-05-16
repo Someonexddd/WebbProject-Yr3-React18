@@ -1,4 +1,9 @@
 /* Provide sufficient contrast against white background */
+
+body, html {
+  width: 100vw;
+  height: 100%;
+}
 a {
   color: #0366d6;
 }
@@ -6,8 +11,16 @@ a {
 code {
   color: #E01A76;
 }
-
-
+.row-padding-fix {
+  width: 100vw !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.col-padding-fix {
+  width: 100vw !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -47,17 +60,24 @@ img {
   display: flex !important;
 }
 
-.carousel-image-container {
+.container-body {
   width: 100% !important;
-  height: 84.5vh !important;
+  height: calc(100vh - 150px) !important;
+}
+.background-color-purchase {
+  background-color: var(--main-background) !important;
 }
 h3 {
   color: black;
 }
+.purchase-header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 .carousel-image-size {
   width: fit-content !important;
   max-width: 100% !important;
-  height: 100% !important;
+  height: calc(100vh - 150px) !important;
 }
 .profile-container {
   display: flex;

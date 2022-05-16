@@ -11,6 +11,12 @@ a.navbar-brand {
   padding: 0px !important;
 }
 
+.fix-width {
+  width: 100vw !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
 .white-text {
   color: white !important;
   margin-top: 30px;

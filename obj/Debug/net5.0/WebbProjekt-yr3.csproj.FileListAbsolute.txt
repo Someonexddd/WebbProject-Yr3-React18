@@ -654,7 +654,6 @@ C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.runtimeconfig.json
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.runtimeconfig.dev.json
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.dll
-C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\ref\WebbProjekt-yr3.dll
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.pdb
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.Views.dll
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\bin\Debug\net5.0\WebbProjekt-yr3.Views.pdb
@@ -862,3 +861,4 @@ C:\Users\theoj\Desktop\WebbProject-Yr3-React18\obj\Debug\net5.0\ref\WebbProjekt-
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\obj\Debug\net5.0\WebbProjekt-yr3.pdb
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\obj\Debug\net5.0\WebbProjekt-yr3.genruntimeconfig.cache
 C:\Users\theoj\Desktop\WebbProject-Yr3-React18\obj\Debug\net5.0\WebbProjekt-yr3.csproj.AssemblyReference.cache
+C:\Users\theoj\Desktop\WebbProject-Yr3-React18\obj\Debug\net5.0\refint\WebbProjekt-yr3.dll

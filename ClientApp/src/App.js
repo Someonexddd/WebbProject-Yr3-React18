@@ -7,6 +7,8 @@ import './App.css';
 import  Profile  from "./components/Auth0Comps/Profile";
 import { ProtectedRoute } from "./components/protected-route";
 import EditPage from './components/EditPage';
+import PurchaseForm from "./components/Purchase";
+import Purchases from "./components/Purchases";
 
 
 
@@ -26,6 +28,8 @@ function App() {
           <Route path='/CD' element={<ProductList />} />
           <Route path='/Cassette' element={<ProductList />} />
           <Route path='/Details' element={<Details />} />
+          <Route path='/Purchase' element={<PurchaseForm />} />
+          <Route path='/Purchases' element={<Purchases/>}/>
           <Route path='/Profile' element={<ProtectedRoute component={Profile}/>}/>
           <Route path='/EditPage' element={<ProtectedRoute component={EditPage}/>}></Route>
         </Routes>

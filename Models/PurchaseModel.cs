@@ -21,17 +21,17 @@ namespace WebbProjekt_yr3.Models
         [Column(TypeName = "nvarchar(max)")]
         public string Adress { get; set; }
         [Column(TypeName ="nvarchar(max)")]
-        public DateTime PostNum { get; set; }
+        public string PostNum { get; set; }
         [Column (TypeName ="DateTime")]
         public DateTime PurchaseDate { get; set; }
 
         [Column(TypeName = "nvarchar(max)")]
         public string Country { get; set; }
         [Column(TypeName = "nvarchar(max)")]
-        public string CardNum { get; set; }
+        public int CardNum { get; set; }
         [Column(TypeName = "nvarchar(max)")]
-        public string CardCCV { get; set; }
+        public int CardCCV { get; set; }
         [Column(TypeName = "nvarchar(max)")]
-        public int CardName { get; set; }
+        public string CardName { get; set; }
     }
 }

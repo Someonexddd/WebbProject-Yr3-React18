@@ -61,8 +61,8 @@ export default function ProductList() {
     return (
         <>
 
-            <div className='row'>
-                <div className='col'>
+            <div className='row row-padding-fix'>
+                <div className='col col-padding-fix'>
                     <div className="p-5 mb-4 bg-light rounded-3">
                         <h1 className="display-5 fw-bold text-center">{location.state.type}</h1>
                     </div>

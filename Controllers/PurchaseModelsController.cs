@@ -69,7 +69,7 @@ namespace WebbProjekt_yr3.Controllers
             {
                 return BadRequest();
             }
-
+            
 
             try
             {
