@@ -14,6 +14,7 @@ export default function ProductList() {
 
     const [ProductListConst, setProductListConst] = useState([])
     const location = useLocation();
+    //location gets the type of page we are loading
 
 
 
@@ -25,6 +26,7 @@ export default function ProductList() {
 
 
     const productAPI = (url = 'http://localhost:5000/api/ProductModels') => {
+        //the api is used to get the list of products
         return {
             fetchAll: () => axios.get(url),
             fetchById: id => axios.get(url + id),

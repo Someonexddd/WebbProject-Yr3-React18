@@ -25,7 +25,7 @@ const initalFieldValues = {
 export default function ProductForm(props) {
 
     const { addOrEdit } = props;
-    
+    //recieves the add or edit prop 
 
     const [values, setValues] = useState(initalFieldValues);
     const [errors, setErrors] = useState({})
@@ -38,6 +38,7 @@ export default function ProductForm(props) {
         })
     }
 
+    //showpreview makes it so that the image is shown in the form before submit
     const showPreview = e => {
         if (e.target.files && e.target.files[0]) {
             let imageFile = e.target.files[0];
@@ -71,7 +72,7 @@ export default function ProductForm(props) {
             })
         }
     }
-
+    //makes sure the fields arent null
     const validate = () => {
         let temp = {}
         temp.Name = values.Name === "" ? false : true;
@@ -85,6 +86,7 @@ export default function ProductForm(props) {
         return Object.values(temp).every(x => x === true)
     }
 
+    //Resets the form on submit
     const resetForm = () => {
         setValues(initalFieldValues)
         document.getElementById('image-uploader').value = null;
@@ -98,7 +100,8 @@ export default function ProductForm(props) {
         document.getElementById('UnitsInStock').value = null;
         setErrors({});
     }
-
+    
+    //as the name implies it handles the form submit and throws errors if it fails
     const handleFormSubmit = e => {
         e.preventDefault()
         if (validate()) {
@@ -117,10 +120,12 @@ export default function ProductForm(props) {
             formData.append('imageFile', values.imageFile)
             formData.append('imageAlt', values.imageAlt)
 
+            //addoredit sends the formdata using the api to the back-end database and then resets the form
             addOrEdit(formData, resetForm())
         }
     }
 
+    //puts the red around non filled fields
     const applyErrorClass = field => ((field in errors && errors[field] === false) ? ' invalid-field' : '')
 
 

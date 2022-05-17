@@ -6,23 +6,26 @@ import axios from "axios";
 export default function Purchases() {
 
     const [PurchaseList, setPurchaseList] = useState([]);
+    //Lists where products are stored on site load
 
     useEffect(() => {
         refreshPurchaseList();
+        //refreses on load
         // eslint-disable-next-line
     }, [])
 
     function refreshPurchaseList() {
-
         purchaseAPI().fetchAll()
             .then(res => {
                 console.log(res.data);
                 setPurchaseList(res.data)
+                //adds the products to the list
             })
             .catch(err => console.log(err))
     }
 
     const purchaseAPI = (url = 'http://localhost:5000/api/PurchaseModels') => {
+        //Calls the product api to receive the product list from the backend
         return {
             fetchAll: () => axios.get(url),
             fetchById: id => axios.get(url + id),

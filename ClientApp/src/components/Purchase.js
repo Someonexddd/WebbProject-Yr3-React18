@@ -22,12 +22,14 @@ const initalFieldValues = {
 export default function PurchaseForm() {
 
     const location = useLocation();
+    //location gets the specific product being purchased
     const state = location.state
     console.log(state)
     const id = state.productId;
     const navigate = useNavigate();
 
     const productAPI = (url = 'http://localhost:5000/api/PurchaseModels/') => {
+        //calls the purchase api and recieves the purchase
         return {
             fetchAll: () => axios.get(url),
             fetchById: id => axios.get(url + id),

@@ -6,11 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
+//Auth0 variables
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
+//What auth0 needs to render also React Renderer
 root.render(
     <Auth0Provider
     domain={domain}

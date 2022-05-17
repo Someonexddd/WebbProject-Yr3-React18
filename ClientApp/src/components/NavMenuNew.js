@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -8,6 +8,7 @@ const NavMenuNew = () => {
     const { loginWithRedirect, logout } = useAuth0();
     const Authenticated = useAuth0().isAuthenticated;
     const Loading = useAuth0().isLoading;
+    const [Input, setInput] = useState('');
 
     const loginButton = () => {
         if (Loading === true && Authenticated === false) {
@@ -98,6 +99,7 @@ const NavMenuNew = () => {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body className='no-padding' style={{ overflow: "hidden" }}>
+                            
                             <Stack gap={12} className='col-md-5 mx-auto hidden '>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-2 fix-width">
                                     <Nav.Item className='md-4 col'>
@@ -105,10 +107,12 @@ const NavMenuNew = () => {
                                     </Nav.Item>
                                     <Nav.Item className='md-4 col justify-content-center' style={{ display: "flex" }}>
                                         <Stack direction='horizontal' gap={3} style={{ width: "300px" }}>
-                                            <Form.Control aria-label='search' type="input" placeholder="Search" />
-                                            <Button variant="search" type="submit">
-                                                Search
-                                            </Button>
+                                            <Form.Control aria-label='search' type="input" placeholder="Search" value={Input} onInput={e => setInput(e.target.value)}/>
+                                            <Button className="btn-colors" as={Link} to={
+                                {
+                                    pathname: '/Search?'+Input,
+                                }
+                            }>Search</Button>
                                         </Stack>
                                     </Nav.Item>
                                     <Nav.Item className='md-4 col justify-content-end' style={{ display: "flex", marginBottom: "30px" }} gap={2}>
@@ -141,6 +145,7 @@ const NavMenuNew = () => {
                                     </Nav.Item>
                                 </Nav>
                             </Stack>
+                            
                             <Stack gap={12} className='col-md-5 mx-auto nav3'>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav2" style={{ height: "100vh" }}>
                                     <Nav.Item className='justify-content-center flex'>

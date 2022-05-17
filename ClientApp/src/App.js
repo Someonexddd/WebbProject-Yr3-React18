@@ -9,14 +9,16 @@ import { ProtectedRoute } from "./components/protected-route";
 import EditPage from './components/EditPage';
 import PurchaseForm from "./components/Purchase";
 import Purchases from "./components/Purchases";
-
+import Search from './components/Search'
+// imports
 
 
 function App() {
 
 
   return (
-
+    //React Router Routes
+    //Protected routes ensures the user is logged in
     <BrowserRouter>
       <Layout>
         <Routes>
@@ -30,6 +32,8 @@ function App() {
           <Route path='/Details' element={<Details />} />
           <Route path='/Purchase' element={<PurchaseForm />} />
           <Route path='/Purchases' element={<Purchases/>}/>
+          <Route path='/Search' element={<Search/>}/>
+          
           <Route path='/Profile' element={<ProtectedRoute component={Profile}/>}/>
           <Route path='/EditPage' element={<ProtectedRoute component={EditPage}/>}></Route>
         </Routes>

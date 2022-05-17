@@ -6,8 +6,10 @@ function ProductCard(props) {
     let products = props.value;
 
     let type = props.type;
+    //type is which kind of page between LP, CASSETTE AND NEWINSTOCK
     console.log(type)
 
+    //the diffrent if statements check for the type of page
     if (type === "LP") {
         let productsFiltered = products.filter(function (el) {
             return el.format === "LP";
