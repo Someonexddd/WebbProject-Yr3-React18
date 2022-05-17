@@ -7,14 +7,15 @@ import axios from "axios";
 export default function Products() {
 
     const [ProductList, setProductList] = useState([]);
-    const productsFiltered = [];
-    //Filtered productlists
+    const [filteredResults, setFilteredResults] = useState([]);
     let location = useLocation();
     let search = location.search;
-    console.log(search);
+    
 
     useEffect(() => {
         refreshProductList();
+        filterSearch();
+        console.log(filteredResults)
         // eslint-disable-next-line
     }, [])
 
@@ -38,11 +39,16 @@ export default function Products() {
         }
     }
 
-    for (let index = 0; index < ProductList.length; index++) {
-        if (ProductList[index].name === "*"+search+"*") {
-            productsFiltered.push(ProductList[index])
-        }    
+
+    function filterSearch ()  {
+        const filteredList = ProductList.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(search.toLowerCase())
+        })
+        setFilteredResults(filteredList)
+        
     }
+
+
 
     return (
         <>
@@ -63,7 +69,7 @@ export default function Products() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {productsFiltered.map((Product) => {
+                                {filteredResults.map((Product) => {
                                     return (
                                         <tr key={Product.ProductId}>
                                             <td>{Product.name}</td>

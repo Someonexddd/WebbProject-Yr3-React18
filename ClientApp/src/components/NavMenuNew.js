@@ -149,22 +149,22 @@ const NavMenuNew = () => {
                             <Stack gap={12} className='col-md-5 mx-auto nav3'>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav2" style={{ height: "100vh" }}>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/" >Home</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/" >Home</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/NewInStock" state={{ type: "New In Stock" }}>New In Stock</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/NewInStock" state={{ type: "New In Stock" }}>New In Stock</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/Topsellers" state={{ type: "Topsellers" }}>Topsellers</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/Topsellers" state={{ type: "Topsellers" }}>Topsellers</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/Vinyl" state={{ type: "LP" }}>Vinyl</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/Vinyl" state={{ type: "LP" }}>Vinyl</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/CD" state={{ type: "CD" }}>CDs</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/CD" state={{ type: "CD" }}>CDs</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='justify-content-center flex'>
-                                        <Nav.Link as={Link} className="text-dark" to="/Cassette" state={{ type: "Cassette" }}>Cassette</Nav.Link>
+                                        <Nav.Link as={Link} className="text-dark nav-text space-nav-link" to="/Cassette" state={{ type: "Cassette" }}>Cassette</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
                             </Stack>
