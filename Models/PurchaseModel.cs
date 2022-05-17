@@ -33,5 +33,6 @@ namespace WebbProjekt_yr3.Models
         public int CardCCV { get; set; }
         [Column(TypeName = "nvarchar(max)")]
         public string CardName { get; set; }
+        
     }
 }

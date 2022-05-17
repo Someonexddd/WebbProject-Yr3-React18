@@ -132,7 +132,7 @@ export default function ProductForm(props) {
     return (
         <>
             <div className='container-fluid text-center'>
-                <p className='lead'>A Product</p>
+                <p className='lead'>Add A Product</p>
             </div>
             <form autoComplete='off' noValidate onSubmit={handleFormSubmit}>
                 <div className='card'>
