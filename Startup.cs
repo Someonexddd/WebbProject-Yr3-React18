@@ -31,9 +31,6 @@ namespace WebbProjekt_yr3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ProductDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -47,16 +44,6 @@ namespace WebbProjekt_yr3
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
-            services.AddAuthentication()
-                .AddIdentityServerJwt();
-            
-
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -68,7 +55,7 @@ namespace WebbProjekt_yr3
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApplicationBuilder builder, ApplicationDbContext appDbContext, ProductDbContext productDbContext, PurchaseDbContext purchaseDbContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApplicationBuilder builder, ProductDbContext productDbContext, PurchaseDbContext purchaseDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -82,7 +69,7 @@ namespace WebbProjekt_yr3
                 app.UseHsts();
             }
 
-            appDbContext.Database.Migrate();
+
             productDbContext.Database.Migrate();
             purchaseDbContext.Database.Migrate();
 
@@ -113,9 +100,7 @@ namespace WebbProjekt_yr3
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseIdentityServer();
-            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
