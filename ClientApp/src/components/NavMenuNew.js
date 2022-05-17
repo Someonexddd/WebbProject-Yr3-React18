@@ -101,11 +101,11 @@ const NavMenuNew = () => {
                             <Stack gap={12} className='col-md-5 mx-auto hidden '>
                                 <Nav className="justify-content-center flex-grow-1 pe-3 nav1 px-2 fix-width">
                                     <Nav.Item className='md-4 col'>
-                                        <Nav.Link as={Link} to="/"> <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' style={{ width: "300px", marginTop: "30px" }} /></Nav.Link>
+                                        <Nav.Link as={Link} to="/"> <Image fluid='true' src='https://i.imgur.com/RD9yh7u.png' aria-label='logo' style={{ width: "300px", marginTop: "30px" }} /></Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item className='md-4 col justify-content-center' style={{ display: "flex" }}>
                                         <Stack direction='horizontal' gap={3} style={{ width: "300px" }}>
-                                            <Form.Control type="input" placeholder="Search" />
+                                            <Form.Control aria-label='search' type="input" placeholder="Search" />
                                             <Button variant="search" type="submit">
                                                 Search
                                             </Button>
