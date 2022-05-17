@@ -15,13 +15,16 @@ const initalFieldValues = {
     PostNum: "",
     CardName: "",
     CardNum: "",
-    CardCCV: ""
+    CardCCV: "",
+    ProductId: ""
 }
 
 export default function PurchaseForm() {
 
     const location = useLocation();
     const state = location.state
+    console.log(state)
+    const id = state.productId;
     const navigate = useNavigate();
 
     const productAPI = (url = 'http://localhost:5000/api/PurchaseModels/') => {
@@ -80,6 +83,7 @@ export default function PurchaseForm() {
             formData.append('CardNum', values.CardNum)
             formData.append('CardCCV', values.CardCCV)
             formData.append('PostNum', values.PostNum)
+            formData.append('ProductId', id)
             addOrEdit(formData)
             navigate(-1)
             alert("You Bought one copy of " + state.name);

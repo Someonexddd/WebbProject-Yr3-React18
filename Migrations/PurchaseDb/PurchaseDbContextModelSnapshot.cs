@@ -49,6 +49,9 @@ namespace WebbProjekt_yr3.Migrations.PurchaseDb
                     b.Property<string>("PostNum")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("PurchaseDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DateTime")
